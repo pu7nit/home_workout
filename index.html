@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#FAF8F4" />
+  <meta name="description" content="Cozy Strength — a private, local-first home strength training tracker." />
+  <title>Cozy Strength — Home Fitness Tracker</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23A8C3A0'/%3E%3Cpath d='M20 32h24M24 24v16M40 24v16' stroke='%23fff' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="34" height="34" fill="none"><rect width="32" height="32" rx="10" fill="currentColor" opacity=".16"/><path d="M9 16h14M12 12v8M20 12v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="brand-text"><strong>Cozy Strength</strong><small>home training, gently tracked</small></span>
+      </div>
+
+      <nav class="side-nav" id="side-nav">
+        <button class="nav-item" data-route="home" type="button"><span class="nav-icon" data-icon="home"></span><span>Home</span></button>
+        <button class="nav-item" data-route="workouts" type="button"><span class="nav-icon" data-icon="dumbbell"></span><span>Workouts</span></button>
+        <button class="nav-item" data-route="library" type="button"><span class="nav-icon" data-icon="book"></span><span>Exercises</span></button>
+        <button class="nav-item" data-route="calendar" type="button"><span class="nav-icon" data-icon="calendar"></span><span>Calendar</span></button>
+        <button class="nav-item" data-route="strength" type="button"><span class="nav-icon" data-icon="body"></span><span>Strength map</span></button>
+        <button class="nav-item" data-route="progress" type="button"><span class="nav-icon" data-icon="chart"></span><span>Progress</span></button>
+        <button class="nav-item" data-route="planner" type="button"><span class="nav-icon" data-icon="clipboard"></span><span>Planner</span></button>
+        <button class="nav-item" data-route="settings" type="button"><span class="nav-icon" data-icon="settings"></span><span>Settings</span></button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="mini-card" id="sidebar-status">
+          <span class="dot-sage"></span>
+          <p><strong>Private by design</strong><br /><small>Your data stays in this browser.</small></p>
+        </div>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" id="mobile-brand" data-route="home" type="button" aria-label="Go home">
+          <span data-icon="logo"></span>
+        </button>
+        <div class="topbar-title" id="topbar-title">Home</div>
+        <div class="topbar-actions">
+          <span class="today-chip" id="topbar-date"></span>
+          <button class="btn btn-primary btn-sm" id="topbar-start" data-action="start-blank" type="button">
+            <span data-icon="plus"></span><span class="hide-xs">Log workout</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="main" class="view" tabindex="-1">
+        <div class="boot-screen">
+          <div class="boot-mark" aria-hidden="true"></div>
+          <p>Warming up your training space…</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <nav class="bottom-nav" id="bottom-nav" aria-label="Mobile navigation">
+    <button class="bnav-item" data-route="home" type="button"><span class="nav-icon" data-icon="home"></span><span>Home</span></button>
+    <button class="bnav-item" data-route="workouts" type="button"><span class="nav-icon" data-icon="dumbbell"></span><span>Workouts</span></button>
+    <button class="bnav-item" data-route="calendar" type="button"><span class="nav-icon" data-icon="calendar"></span><span>Calendar</span></button>
+    <button class="bnav-item" data-route="strength" type="button"><span class="nav-icon" data-icon="body"></span><span>Strength</span></button>
+    <button class="bnav-item" data-route="more" type="button"><span class="nav-icon" data-icon="grid"></span><span>More</span></button>
+  </nav>
+
+  <div id="modal-root"></div>
+  <div id="rest-widget" class="rest-widget" hidden aria-live="polite"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="false"></div>
+
+  <template id="more-menu-template">
+    <div class="more-menu">
+      <button class="more-link" data-route="library" type="button"><span data-icon="book"></span>Exercise library</button>
+      <button class="more-link" data-route="progress" type="button"><span data-icon="chart"></span>Progress</button>
+      <button class="more-link" data-route="planner" type="button"><span data-icon="clipboard"></span>Planner</button>
+      <button class="more-link" data-route="settings" type="button"><span data-icon="settings"></span>Settings</button>
+    </div>
+  </template>
+
+  <noscript><p style="padding:2rem;text-align:center">Cozy Strength needs JavaScript enabled to record workouts locally.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
